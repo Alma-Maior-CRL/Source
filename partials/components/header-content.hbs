@@ -39,23 +39,39 @@
         {{/match}}
 
         {{!-- Magazine layout --}}
+        {{!-- Customized for RM Jornal --}}
         {{#match headerStyle "Magazine"}}
-            {{#foreach posts limit="7"}}
+            {{#foreach posts limit="5"}}
                 {{#match @number 2}}
                     <div class="gh-header-left">
+
+                    {{!-- Ad banner --}}
+                    <div class="gh-card gh-ad-banner">
+                        <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-id="fbe3745e2001e55bf7b8d8554b63ed9f"></ins>
+                    </div>
                 {{/match}}
-                {{#match @number 5}}
+
+                {{#match @number 4}}
                     <div class="gh-header-right">
+
+                    {{!-- Ad banner --}}
+                    <div class="gh-card gh-ad-banner">
+                        <ins data-revive-zoneid="3" data-revive-target="_blank" data-revive-id="fbe3745e2001e55bf7b8d8554b63ed9f"></ins>
+                    </div>
                 {{/match}}
+
+                {{!-- Check if first to add bigger image --}}
                 {{#if @first}}
                     {{> "post-card" imageSizes="640px"}}
                 {{else}}
                     {{> "post-card"}}
                 {{/if}}
-                {{#match @number 4}}
+
+                {{#match @number 3}}
                     </div>
                 {{/match}}
-                {{#match @number 7}}
+
+                {{#match @number 5}}
                     </div>
                 {{/match}}
             {{/foreach}}

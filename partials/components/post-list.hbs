@@ -11,7 +11,7 @@
         
         {{#if showTitle}}
             <h2 class="gh-container-title">
-                {{#unless title}}Latest{{else}}{{title}}{{/unless}}
+                {{#unless title}}{{t "Latest"}}{{else}}{{title}}{{/unless}}
             </h2>
         {{/if}}
 
@@ -81,6 +81,11 @@
 
         {{#if showSidebar}}
             <aside class="gh-sidebar">
+                {{!-- Ad banner --}}
+                <div class="gh-ad-banner" style="margin-bottom: 20px;">
+                    <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-id="fbe3745e2001e55bf7b8d8554b63ed9f"></ins>
+                </div>
+
                 <div class="gh-sidebar-inner">
                     <section class="gh-about">
                         {{#if @site.icon}}
@@ -92,11 +97,11 @@
                         {{/if}}
                         {{#if @site.members_enabled}}
                             {{#unless @member}}
-                                <button class="gh-button" data-portal="signup">Subscribe</button>
+                                <button class="gh-button" data-portal="signup">{{t "Subscribe"}}</button>
                             {{else}}
                                 {{#if @site.paid_members_enabled}}
                                     {{#unless @member.paid}}
-                                        <button class="gh-button" data-portal="upgrade">Upgrade</button>
+                                        <button class="gh-button" data-portal="upgrade">{{t "Upgrade"}}</button>
                                     {{/unless}}
                                 {{/if}}
                             {{/unless}}
@@ -104,9 +109,9 @@
                     </section>
                     {{#if @site.recommendations_enabled}}
                         <section class="gh-recommendations">
-                            <h4 class="gh-sidebar-title">Recommendations</h4>
+                            <h4 class="gh-sidebar-title">{{t "Recommendation"}}</h4>
                             {{recommendations}}
-                            <button data-portal="recommendations">See all {{> "icons/arrow"}}</button>
+                            <button data-portal="recommendations">{{t "See all"}} {{> "icons/arrow"}}</button>
                         </section>
                     {{/if}}
                 </div>
@@ -115,7 +120,7 @@
 
         {{#match pagination.pages ">" 1}}
             <div class="gh-more is-title">
-                <a href="{{@site.url}}/page/2">See all {{> "icons/arrow"}}</a>
+                <a href="{{@site.url}}/page/2">{{t "See all"}} {{> "icons/arrow"}}</a>
             </div>
         {{/match}}
 

@@ -3,6 +3,13 @@
 
 {{> "components/header" headerStyle=@custom.header_style}}
 
+{{!-- Ad banner --}}
+<div class="gh-inner">
+    <div class="gh-ad-banner" style="margin-top: 40px;">
+        <ins data-revive-zoneid="4" data-revive-target="_blank" data-revive-id="fbe3745e2001e55bf7b8d8554b63ed9f"></ins>
+    </div>
+</div>
+
 {{#match @custom.header_style "!=" "Highlight"}}
     {{> "components/featured" showFeatured=@custom.show_featured_posts limit=4}}
 {{/match}}
