@@ -8,7 +8,7 @@
 
 <section class="gh-container is-{{#match postFeedStyle "List"}}list{{else}}grid{{/match}}{{#if showSidebar}} has-sidebar{{/if}}{{#unless @custom.show_images_in_feed}} no-image{{/unless}} gh-outer">
     <div class="gh-container-inner gh-inner">
-        
+
         {{#if showTitle}}
             <h2 class="gh-container-title">
                 {{#unless title}}{{t "Latest"}}{{else}}{{title}}{{/unless}}
@@ -39,9 +39,9 @@
                             {{/match}}
                         {{/if}}
                     {{else match @custom.header_style "Magazine"}}
-                        {{#match posts.length ">=" 7}}
+                        {{#match posts.length ">=" 5}}
                             {{#get "posts" include="authors" limit="19"}}
-                                {{#foreach posts from="8" limit="12"}}
+                                {{#foreach posts from="6" limit="12"}}
                                     {{> "post-card" lazyLoad=true}}
                                 {{/foreach}}
                             {{/get}}
@@ -83,7 +83,7 @@
             <aside class="gh-sidebar">
                 {{!-- Ad banner --}}
                 <div class="gh-ad-banner" style="margin-bottom: 20px;">
-                    <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-id="fbe3745e2001e55bf7b8d8554b63ed9f"></ins>
+                    <ins data-revive-zoneid="2" data-revive-target="_blank" data-revive-id="fd07f4f8da8de71ce77dd04ef2137785"></ins>
                 </div>
 
                 <div class="gh-sidebar-inner">
@@ -97,7 +97,7 @@
                         {{/if}}
                         {{#if @site.members_enabled}}
                             {{#unless @member}}
-                                <button class="gh-button" data-portal="signup">{{t "Subscribe"}}</button>
+                                <a class="gh-button" target="_blank" href="https://portal.rmjornal.com">{{t "Subscribe"}}</a>
                             {{else}}
                                 {{#if @site.paid_members_enabled}}
                                     {{#unless @member.paid}}
