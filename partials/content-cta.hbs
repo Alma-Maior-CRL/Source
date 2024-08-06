@@ -1,0 +1,44 @@
+{{{html}}}
+<aside class="gh-post-upgrade-cta">
+    <div
+        class="gh-post-upgrade-cta-content"
+        style="background-color: {{@site.accent_color}}"
+    >
+        {{#has visibility="paid"}}
+            <h2>Este
+                {{#is "page"}}página{{else}}artigo{{/is}}
+                é para assinantes apenas!</h2>
+        {{/has}}
+        {{#has visibility="members"}}
+            <h2>Este
+                {{#is "page"}}página{{else}}artigo{{/is}}
+                é para assinantes apenas!</h2>
+        {{/has}}
+        {{#has visibility="tiers"}}
+            <h2>Este
+                {{#is "page"}}página{{else}}artigo{{/is}}
+                é para assinantes do plano
+                {{tiers}}
+                apenas!
+            </h2>
+        {{/has}}
+        {{#if @member}}
+            <a
+                class="gh-btn"
+                data-portal="account/plans"
+                href="https://assinar.rmjornal.com"
+                style="color:{{@site.accent_color}}"
+            >Assine Já</a>
+        {{else}}
+            <a
+                class="gh-btn"
+                data-portal="signup"
+                href="https://assinar.rmjornal.com"
+                style="color:{{@site.accent_color}}"
+            >Assine Já</a>
+            <p><small>Já é assinante?
+                    <a data-portal="signin" href="#/portal/signin">Iniciar
+                        sessão</a></small></p>
+        {{/if}}
+    </div>
+</aside>
