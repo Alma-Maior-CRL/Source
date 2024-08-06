@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "gulp",
     "test": "gscan .",
-    "zip": "npm run test && gulp zip"
+    "zip": "yarn run test && gulp zip"
   },
   "author": {
     "name": "Afonso Santos",
